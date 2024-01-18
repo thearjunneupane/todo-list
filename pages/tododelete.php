@@ -26,7 +26,6 @@ if (isset($_GET['id'])) {
     }
 
     $conn->close();
-    header('Location: /');
 } else {
     $error = "Nothing to show up here!";
 }
@@ -51,5 +50,7 @@ if (!empty($error)) {
 
     </html>
 <?php
+} else {
+    header('Location: /');
 }
 ?>
