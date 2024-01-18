@@ -1,3 +1,8 @@
+<?php
+include("../conn/session.php");
+include("../conn/conn.php");
+$errors = [];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,9 +29,6 @@
             <div class="todo-details">
 
                 <?php
-                include("../conn/session.php");
-                include("../conn/conn.php");
-                $errors = [];
 
                 if (isset($_GET['id'])) {
                     $id = $_GET['id'];
