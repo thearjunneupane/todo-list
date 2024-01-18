@@ -26,7 +26,7 @@ if (isset($_GET['id'])) {
     }
 
     $conn->close();
-    header('Location: /todo-list/');
+    header('Location: /');
 } else {
     echo "Nothing to show up here!";
 }

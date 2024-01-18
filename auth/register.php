@@ -2,7 +2,7 @@
 session_start();
 if (isset($_SESSION['userid'])) {
     // Redirect to login page if not logged in
-    header("Location: /todo-list/");
+    header("Location: /");
     exit();
 }
 include("../conn/conn.php");
@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                     <button type="submit" style="align-self: center; width: 100%; margin-top: 20px;" class="light-button">Register</button>
                     <div style="margin-top: 30px; align-self: center;">
-                        <a href="/todo-list/auth/login.php">Already have an account?</a>
+                        <a href="/auth/login.php">Already have an account?</a>
                     </div>
                 </form>
 

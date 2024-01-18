@@ -68,7 +68,7 @@
                 ?>
 
                 <div class="btn-group" style="justify-content: space-around;">
-                    <button class="back-btn"><a href="/todo-list/"><i class="fa-solid fa-circle-left"></i></a></button>
+                    <button class="back-btn"><a href="/"><i class="fa-solid fa-circle-left"></i></a></button>
                 </div>
             </div>
         </div>

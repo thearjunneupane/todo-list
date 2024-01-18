@@ -114,7 +114,7 @@
                 ?>
 
                 <div class="btn-group" style="justify-content: space-around;">
-                    <button class="back-btn"><a href="/todo-list/"><i class="fa-solid fa-circle-left"></i></a></button>
+                    <button class="back-btn"><a href="/"><i class="fa-solid fa-circle-left"></i></a></button>
                     <button type="submit" form="updateForm" class="confirm-btn"><i class="fa-solid fa-circle-check"></i></button>
                 </div>
             </div>

@@ -2,7 +2,7 @@
 session_start();
 if (isset($_SESSION['userid'])) {
     // Redirect to login page if not logged in
-    header("Location: /todo-list/");
+    header("Location: /");
     exit();
 }
 
@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <span class="text-error"><?= isset($errors['userpassword']) ? $errors['userpassword'] : '' ?></span><br>
                     <button type="submit" style="align-self: center; width: 100%; margin-top: 20px;" class="light-button">Login</button>
                     <div style="margin-top: 30px; align-self: center;">
-                        <a href="/todo-list/auth/register.php">Register new account?</a>
+                        <a href="/auth/register.php">Register new account?</a>
                     </div>
                 </form>
             </div>

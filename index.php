@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $stmt->bind_param("iss", $userId, $todoTitle, $todoDescription);
 
         if ($stmt->execute()) {
-            echo "<script>alert('Added Todo Successfully!'); location.replace('/todo-list')</script>";
+            echo "<script>alert('Added Todo Successfully!'); location.replace('/')</script>";
             exit();
         } else {
             $errors['database'] = "Error Executing Statement!";
