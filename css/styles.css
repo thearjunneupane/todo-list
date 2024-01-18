@@ -1,0 +1,615 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* #363532, rgb(88, 111, 112) */
+  align-items: center;
+  font-family: "Work Sans", sans-serif;
+  max-height: 100vh;
+}
+
+.light {
+  background-image: linear-gradient(100deg, #d4f1ff, #ffffff);
+  color: #1a150e;
+  transition: 0.3s linear;
+}
+
+.darker {
+  background-image: linear-gradient(100deg, #001214, #001f29);
+  color: white;
+  transition: 0.3s linear;
+}
+
+#header,
+#datetime {
+  width: 100%;
+}
+
+#header {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1rem;
+  min-height: 15vh;
+  width: 100%;
+  /* background-color: blue; */
+}
+
+#header .logout-btn {
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 20px;
+  background-color: #45a049;
+}
+#header .logout-btn i {
+  font-size: 16px;
+}
+
+/* Theme buttons div */
+.flexrow-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin-right: 3%;
+}
+
+.theme-selector {
+  border: 1px solid #d1dae3;
+  border-radius: 100%;
+  height: 35px;
+  margin: 0 8px;
+  transition: tranform 150ms ease-in-out, box-shadow 200ms ease-in-out;
+  width: 35px;
+}
+
+.theme-selector:hover {
+  box-shadow: white 0 0 8px;
+  cursor: pointer;
+}
+
+.theme-selector:active {
+  transform: scale(0.95);
+}
+
+.light-theme {
+  background-image: linear-gradient(100deg, #d4f1ff, #ffffff);
+}
+
+.darker-theme {
+  background-image: linear-gradient(100deg, #001214, #001f29);
+}
+
+/* Animation */
+#title {
+  border-right: solid 3px rgba(0, 0, 0, 0.75);
+  white-space: pre;
+  overflow: hidden;
+  letter-spacing: 0.2rem;
+  max-width: fit-content;
+  margin: 0 1rem;
+}
+
+/* Animation */
+#title {
+  animation: animated-text 2s steps(11, end) 0.5s 1 normal both,
+    animated-cursor 750ms steps(11, end) infinite;
+}
+
+#title.darker-title {
+  animation: animated-text 0.5s steps(11, end) 0.5s 1 normal both,
+    darker-animated-cursor 750ms steps(11, end) infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 480px;
+  }
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor {
+  from {
+    border-right-color: rgba(0, 0, 0, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes darker-animated-cursor {
+  from {
+    border-right-color: #01394c;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+#form form input.light-input,
+textarea.light-input {
+  background-color: #aeb1b4;
+  color: #1a150e;
+}
+
+#form form input.light-input::placeholder,
+textarea.light-input::placeholder {
+  color: #1a150e;
+  opacity: 0.7;
+}
+
+#form form input.darker-input,
+textarea.darker-input {
+  background-color: #01394c;
+  color: white;
+}
+
+#form form input.darker-input::placeholder,
+textarea.darker-input::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
+#form form input:hover,
+textarea:hover {
+  cursor: text;
+}
+
+#form form input.light-input:hover {
+  background-color: #919699;
+}
+
+#form form textarea.light-input:hover {
+  background-color: #919699;
+}
+
+#form form input.darker-input:hover {
+  background-color: #013141;
+}
+
+#form form textarea.darker-input:hover {
+  background-color: #013141;
+}
+
+button {
+  border: none;
+  outline: none;
+  transition: box-shadow 200ms ease, background-color 200ms ease-in-out;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* Button themes */
+
+button.light-button {
+  background-color: white;
+  color: #1a150e;
+}
+
+button.light-button:hover {
+  background-color: #f0f0f0;
+}
+
+button.darker-button {
+  background-color: #002837;
+  color: white;
+}
+
+button.darker-button:hover {
+  background-color: #001f29;
+}
+
+#form form button {
+  padding: 10px;
+  font-size: 17px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  min-width: 100px;
+}
+
+#form {
+  /* background-color: red; */
+  padding: 20px;
+  flex: 10%;
+  min-width: 350px;
+}
+
+#myUnOrdList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: teal; */
+  flex: 10%;
+  border-radius: 1.5em;
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px,
+    rgba(0, 0, 0, 0.12) 0px 3px 1px -2px, rgba(0, 0, 0, 0.2) 0px 1px 5px 0px;
+  overflow: auto;
+  border-top: 4px solid transparent;
+  border-bottom: 20px solid transparent;
+  /* height: 100%; */
+  height: 100%;
+  min-width: 500px;
+}
+
+#myUnOrdList:hover {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#myUnOrdList::-webkit-scrollbar {
+  width: 10px;
+}
+#myUnOrdList::-webkit-scrollbar-track {
+  background: #013141;
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+  margin: 50px 100px;
+}
+#myUnOrdList::-webkit-scrollbar-thumb {
+  background: #002837;
+  border-radius: 10px;
+}
+
+.todo-list {
+  width: 80%;
+  height: 100%;
+  /* To remove the bullets of unordered list */
+  list-style: none;
+}
+
+.todo {
+  position: relative;
+  margin: 1rem;
+  /* background: rgb(247, 226, 223); */
+  /* color: black; */
+  font-size: 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25em 0.5em;
+  border-radius: 30px;
+  transition: background-color 200ms ease-in-out;
+}
+
+/* Items themes */
+
+.light-todo {
+  background-color: #aeb1b4;
+}
+
+.darker-todo {
+  background-color: #01394c;
+}
+
+.todo li {
+  padding: 7px;
+  /* word-wrap: break-word; */
+  /* flex-wrap: wrap; */
+  font-size: 20px;
+  flex: 1; /* To push the trash and the check button to the right */
+  border-radius: 30px;
+
+  /* wraps the links */
+  overflow-wrap: anywhere;
+}
+
+.check-btn,
+.delete-btn,
+.details-btn,
+.update-btn {
+  font-size: 15px;
+  cursor: pointer;
+  width: 2em;
+  height: 2em;
+  border-radius: 80%;
+  margin: 0 5px;
+}
+
+.check-btn {
+  position: absolute;
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+  word-break: break-all;
+  margin-left: 32px;
+}
+
+.fa-trash,
+.fa-check,
+.fa-eye,
+.fa-pen-to-square,
+.fa-circle-left,
+.fa-circle-check {
+  pointer-events: none;
+}
+
+.completed {
+  transition: 0.2s;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  transition: 0.5s;
+  transform: translateY(45rem) rotateZ(45deg);
+  opacity: 0;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 1000px) {
+  .flexrow-container {
+    align-self: unset;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #title {
+    animation: animated-text 3s steps(16, end) 0.5s 1 normal both,
+      animated-cursor 750ms steps(16, end) infinite;
+  }
+  #myUnOrdList {
+    flex: 100%;
+  }
+}
+
+@media only screen and (max-width: 910px) {
+  #form form {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #myUnOrdList {
+    min-width: unset;
+  }
+  #myUnOrdList .todo-list {
+    width: 100%;
+  }
+
+  #container {
+    padding: 0 !important;
+  }
+  #myUnOrdList {
+    height: auto;
+    box-shadow: none;
+  }
+  #myUnOrdList:hover {
+    box-shadow: none;
+  }
+  #myUnOrdList .todo-details {
+    margin-left: 3%;
+    margin-right: 3%;
+    width: 94%;
+    min-width: unset;
+  }
+  #myUnOrdList .todo-details .title {
+    flex-direction: column;
+  }
+  #myUnOrdList .todo-details .title h4 {
+    align-self: baseline;
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #header {
+    font-size: 0.5rem;
+  }
+
+  #title {
+    animation: animated-text 3.5s steps(16, end) 0.5s 1 normal both,
+      animated-cursor 750ms steps(16, end) infinite;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #form form {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #form form input {
+    border-radius: 17px;
+  }
+
+  #form form button {
+    border-radius: 15px;
+    margin-top: 15px;
+    width: 50%;
+  }
+  #form form > button.light-button {
+    box-shadow: 0 0 5px lightgray;
+  }
+}
+
+/* Your existing CSS code... */
+
+/* Form styling */
+#form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 8%;
+}
+
+#form form label {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  /* color: #fff; Adjust color as needed */
+}
+
+#form form input,
+#form form textarea {
+  padding: 10px;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+#form form textarea,
+textarea {
+  resize: none;
+}
+
+/* Error message styling */
+.text-error {
+  font-size: 0.8rem;
+  color: #ff5555; /* Adjust color as needed */
+  margin-bottom: 8px;
+}
+
+/* Button styling */
+#form form button {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #4caf50; /* Adjust color as needed */
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+#form form button:hover {
+  background-color: #45a049; /* Adjust color as needed */
+}
+
+/* Your existing CSS code... */
+
+#container {
+  display: flex;
+  max-width: 1350px;
+  margin: auto;
+  padding: 20px;
+  /* background-color: green; */
+  /* margin-top: 7vh; */
+  height: 85vh;
+  /* min-height: fit-content; */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 20px;
+}
+
+#live-datetime {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#form form .todo-btn:disabled,
+.confirm-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-group {
+  display: flex;
+}
+
+.todo-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  min-width: 480px;
+}
+
+.todo-details .title,
+.todo-details .description {
+  margin-bottom: 30px;
+  display: flex;
+  column-gap: 20px;
+  justify-content: center;
+}
+
+.todo-details .description {
+  flex-direction: column;
+}
+
+.todo-details h4 {
+  font-size: 24px;
+}
+
+.todo-details .title h4 {
+  align-self: center;
+}
+
+.todo-details .description h4 {
+  margin-bottom: 15px;
+}
+
+.todo-details .detail.description-detail {
+  min-height: 200px;
+}
+
+.todo-details .detail {
+  word-break: break-word;
+  padding: 10px;
+  font-size: 17px;
+  border-radius: 8px;
+}
+
+body.light .todo-details .detail {
+  background-color: #aeb1b4;
+  color: #1a150e;
+  border: 2px solid #01394c;
+}
+
+body.darker .todo-details .detail {
+  background-color: #01394c;
+  color: white;
+  border: 2px solid #aeb1b4;
+}
+
+.back-btn,
+.confirm-btn {
+  background-color: inherit;
+}
+
+.back-btn i,
+.confirm-btn i {
+  font-size: 3em;
+  cursor: pointer;
+}
+
+body.darker .back-btn i,
+body.darker .confirm-btn i {
+  color: #aeb1b4;
+}
+body.light .back-btn i,
+body.light .confirm-btn i {
+  color: #01394c;
+}
+
+body.light #registrationForm input,
+body.darker #loginForm input {
+  background-color: #aeb1b4;
+  color: #1a150e;
+  border: 2px solid #01394c;
+}
+body.darker #registrationForm input,
+body.darker #loginForm input {
+  background-color: #01394c;
+  color: white;
+  border: 2px solid #aeb1b4;
+}
