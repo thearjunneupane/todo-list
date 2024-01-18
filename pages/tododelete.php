@@ -2,7 +2,9 @@
 include("../conn/session.php");
 include_once("../conn/conn.php");
 
-if (isset($_GET['id'])) {
+if (!isset($_GET['id'])) {
+    echo "Nothing to show up here!";
+} else {
     $id = $_GET['id'];
 
     // Assuming you have a user ID stored in the session
@@ -27,6 +29,4 @@ if (isset($_GET['id'])) {
 
     $conn->close();
     header('Location: /');
-} else {
-    echo "Nothing to show up here!";
 }
