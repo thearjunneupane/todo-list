@@ -45,6 +45,7 @@ $todos_sql = "CREATE TABLE IF NOT EXISTS $dbname.todos (
     userid int(6) UNSIGNED,
 		todotitle varchar(50),
 		tododescription varchar(255),
+		isdone tinyint(1) DEFAULT 0,
     FOREIGN KEY (userid) REFERENCES $dbname.users(userid)
 	);";
 

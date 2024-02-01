@@ -230,7 +230,7 @@ button.darker-button:hover {
 #myUnOrdList {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   /* background-color: teal; */
   flex: 10%;
@@ -264,7 +264,6 @@ button.darker-button:hover {
 
 .todo-list {
   width: 80%;
-  height: 100%;
   /* To remove the bullets of unordered list */
   list-style: none;
 }

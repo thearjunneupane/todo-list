@@ -98,9 +98,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if ($result) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<ul class='todo-list'>";
-                    echo "<div class='todo'>";
-                    echo "<button class='check-btn'><a href='pages/tododetails.php?id=" . $row['todoid'] . "' title='See'><i class='fas fa-check'></i></a></button>";
-                    echo "<p class='todo-item'>" . $row['todotitle'] . "</p>";
+                    echo "<div class='todo'";
+                    if ($row['isdone']) {
+                        echo " style='opacity: 0.4;'";
+                    }
+                    echo " >";
+                    echo "<button class='check-btn'><a href='pages/todomark.php?id=" . $row['todoid'] . "' title='Mark'><i class='fas fa-check'></i></a></button>";
+                    echo "<p class='todo-item'";
+                    if ($row['isdone']) {
+                        echo " style='text-decoration: line-through;'";
+                    }
+                    echo " >";
+                    echo $row['todotitle'] . "</p>";
                     echo "<div class='btn-group'>";
                     echo "<button class='details-btn'><a href='pages/tododetails.php?id=" . $row['todoid'] . "' title='Details'><i class='fa-solid fa-eye'></i></a></button>";
                     echo "<button class='update-btn'><a href='pages/todoupdate.php?id=" . $row['todoid'] . "' title='Update'><i class='fa-solid fa-pen-to-square'></i></a></button>";
